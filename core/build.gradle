@@ -1,0 +1,72 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+
+    androidExtensions {
+        experimental = true
+    }
+
+    productFlavors {
+        flavorDimensions "default"
+        staging {
+        }
+        production {
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //Android
+    api "com.android.support:appcompat-v7:$supportLibraryVersion"
+    api "com.android.support:multidex:$multidexVerion"
+
+    //TODO BECAUSE WHOLE FEATURE DEPENDENCE ON THIS CORE LIBRARY
+    //TODO SO IT STILL CAN SEPARATE LIBRARY KEEP NECESSARY IN THIS CORE
+    api "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
+    //Android UI
+    api "com.android.support:design:$supportLibraryVersion"
+
+    // Kotlin
+    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    //koin
+    api "org.koin:koin-android:$koin_version"
+    api "org.koin:koin-android-viewmodel:$koin_version"
+
+
+    //coroutines
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+
+
+    //RxJava & RxAndroid
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJava"
+
+    api("com.github.bumptech.glide:glide:$glideVersion") {
+        exclude group: 'com.android.support'
+    }
+    api("com.github.bumptech.glide:okhttp3-integration:$glideVersion") {
+        exclude group: 'com.android.support'
+        exclude group: 'com.squareup.okhttp3'
+        exclude group: 'com.github.bumptech.glide'
+    }
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+
+    implementation 'com.github.linger1216:labelview:v1.1.2'
+    implementation project(':domain')
+}

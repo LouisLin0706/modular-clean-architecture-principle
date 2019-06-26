@@ -1,0 +1,38 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/brand_main_red</item>
+        <item name="colorPrimaryDark">@color/brand_main_black</item>
+        <item name="android:windowBackground">@color/brand_main_gray</item>
+        <item name="colorAccent">@color/brand_second_pink</item>
+    </style>
+
+    <style name="Base.Text" parent="@android:style/TextAppearance">
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Base.Text.H1" parent="Base.Text">
+        <item name="android:textSize">22sp</item>
+        <item name="android:letterSpacing">0.04</item>
+        <item name="android:lineSpacingExtra">10dp</item>
+    </style>
+
+
+    <style name="Base.Text.H5" parent="Base.Text">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.04</item>
+        <item name="android:lineSpacingExtra">10dp</item>
+    </style>
+
+    <style name="Base.Text.B" parent="Base.Text">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Base.Text.H1.B" parent="Base.Text.B">
+        <item name="android:textSize">22sp</item>
+        <item name="android:letterSpacing">0.04</item>
+        <item name="android:lineSpacingExtra">10dp</item>
+    </style>
+
+
+</resources>

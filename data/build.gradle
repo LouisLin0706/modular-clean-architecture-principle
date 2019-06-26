@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+    }
+
+
+    productFlavors {
+        flavorDimensions "default"
+        // normal
+        def domain_api_pro = "\"http://www.mocky.io\""
+
+        // Maybe has staging domain in the feature
+        def domain_api_dev = "\"http://www.mocky.io\""
+
+        // 測試環境
+        staging {
+            buildConfigField "String", "DOMAIN_API", domain_api_dev
+        }
+        production {
+            buildConfigField "String", "DOMAIN_API", domain_api_pro
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    // Squareup Relation (OkHttp , Retrofit ... )
+    implementation("com.squareup.okhttp3:logging-interceptor:$okhttpVersion") {
+        exclude group: 'com.squareup.okhttp3'
+    }
+    api "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    api "com.squareup.retrofit2:retrofit:$retrofitVersion"
+
+    //coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+
+    //RxJava & RxAndroid
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJava"
+
+
+    //Test
+    testImplementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+    testImplementation 'com.nhaarman:mockito-kotlin:1.5.0'
+    testImplementation 'org.amshove.kluent:kluent:1.14'
+}

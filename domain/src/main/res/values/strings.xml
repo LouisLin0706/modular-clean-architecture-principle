@@ -1,0 +1,5 @@
+<resources>
+    <string name="error_network">Network error</string>
+    <string name="error_connect">Connect error , make sure your network connection is active</string>
+    <string name="error_other">Other error</string>
+</resources>

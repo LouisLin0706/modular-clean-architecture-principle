@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="brand_main_red">#e50914</color>
+    <color name="brand_main_gray">#f5f5f1</color>
+    <color name="brand_main_black">#221f1f</color>
+    <color name="brand_main_black_alpha_70">#B3000000</color>
+    <color name="brand_main_black_alpha_80">#CC000000</color>
+    <color name="brand_main_black_alpha_60">#99000000</color>
+    <color name="brand_main_black_alpha_50">#80000000</color>
+    <color name="brand_main_black_alpha_40">#66000000</color>
+    <color name="brand_main_black_alpha_30">#4D000000</color>
+    <color name="brand_main_black_alpha_10">#1A000000</color>
+    <color name="brand_main_white">#FFFFFF</color>
+    <color name="brand_main_white_alpha_70">#B3FFFFFF</color>
+    <color name="brand_main_white_alpha_50">#80FFFFFF</color>
+    <color name="brand_main_white_alpha_30">#4DFFFFFF</color>
+    <color name="brand_second_pink">#FF605E</color>
+    <color name="brand_second_orange">#FFC200</color>
+    <color name="window_background">#efefef</color>
+</resources>
