@@ -1,4 +1,4 @@
-## Modular Clean Architecture Principal
+## Modular Clean Architecture Principle
 <p align="center">
 <img src="Screenshot_home.png" width="200"/>
 </p>
@@ -6,10 +6,17 @@
 
 ## Project Overview
 
-This project is flow [Build a Modular Android App Architecture(Google I/O'19)](https://www.youtube.com/watch?v=PZBg5DIzNww),the following above is the goal of this project 
+This project is flow [Build a Modular Android App Architecture(Google I/O'19)](https://www.youtube.com/watch?v=PZBg5DIzNww), the following are the project goal of features  
 - Modularization: ensure each page has own responsibility and can be split apk 
 - Clean Architecture: 
-- Flexible data layer: 
+    - Presentation layer: response for rendering ui and will follow MVVM pattern
+    - Domain layer: response for different use case business logic 
+    - Data layer:
+        - Network: response for network connection to get raw data from server 
+        - Database: response for data store if necessary
+        - Store 
+            - Cache 
+           
 
 
 ## Project Description
