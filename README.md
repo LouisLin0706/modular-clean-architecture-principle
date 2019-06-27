@@ -6,7 +6,7 @@
 
 ## Project Overview
 
-This project is flow [Build a Modular Android App Architecture(Google I/O'19)](https://www.youtube.com/watch?v=PZBg5DIzNww), the following are the project goal of features  
+This project is flow [Build a Modular Android App Architecture(Google I/O'19)](https://www.youtube.com/watch?v=PZBg5DIzNww), the following points are the project goal of features  
 - Modularization: ensure each page has own responsibility and can be split apk 
 - Clean Architecture: 
     - Presentation layer: response for rendering ui and will follow MVVM pattern
