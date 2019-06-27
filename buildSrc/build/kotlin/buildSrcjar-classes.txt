@@ -1,0 +1,1 @@
+/Users/Louis/Desktop/github/modular-clean-architecture-principal/buildSrc/build/classes/kotlin/main/Libs.class:/Users/Louis/Desktop/github/modular-clean-architecture-principal/buildSrc/build/classes/kotlin/main/Versions.class

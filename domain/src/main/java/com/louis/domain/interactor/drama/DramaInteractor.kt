@@ -1,12 +1,10 @@
 package com.louis.domain.interactor.drama
 
 import com.louis.data.repository.DramaRepo
-import com.louis.domain.interactor.CoroutinesInteractor
 import com.louis.domain.model.Drama
 
-class DramaInteractor(private val dramaRepo: DramaRepo) : CoroutinesInteractor.RequestInteractor<Unit, List<Drama>> {
-
-    override suspend fun get(params: Unit): List<Drama> {
+class DramaInteractor(private val dramaRepo: DramaRepo) :DramaInteractorPrtocol {
+    override suspend fun getDramas(): List<Drama> {
         return dramaRepo.fetchDramaDraftRawList()
             .map {
                 Drama(
@@ -19,4 +17,5 @@ class DramaInteractor(private val dramaRepo: DramaRepo) : CoroutinesInteractor.R
                 )
             }.toList()
     }
+
 }

@@ -5,14 +5,14 @@ import android.arch.lifecycle.MutableLiveData
 import com.louis.core.arch.BaseViewModel
 import com.louis.core.data.LoadingState
 import com.louis.core.data.Resource
-import com.louis.domain.interactor.drama.DramaInteractor
+import com.louis.domain.interactor.drama.DramaInteractorPrtocol
 import com.louis.domain.model.Drama
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class DramasViewModel(private val dramaInteractor: DramaInteractor) : BaseViewModel() {
+class DramasViewModel(private val dramaInteractor: DramaInteractorPrtocol) : BaseViewModel() {
 
     val dramas = MutableLiveData<Resource<List<Drama>>>()
 
@@ -23,7 +23,7 @@ class DramasViewModel(private val dramaInteractor: DramaInteractor) : BaseViewMo
                 withContext(Dispatchers.Main) {
                     loadingState.value = LoadingState.show()
                 }
-                val data = dramaInteractor.get(Unit)
+                val data = dramaInteractor.getDramas()
                 dramas.postValue(Resource.success(data))
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -33,5 +33,10 @@ class DramasViewModel(private val dramaInteractor: DramaInteractor) : BaseViewMo
                 }
             }
         }
+    }
+
+
+    fun refresh() {
+        fetchDramas()
     }
 }

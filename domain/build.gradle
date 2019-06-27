@@ -40,7 +40,5 @@ dependencies {
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
     testImplementation 'com.nhaarman:mockito-kotlin:1.5.0'
     testImplementation 'org.amshove.kluent:kluent:1.14'
-
-
     api project(':data')
 }
