@@ -6,6 +6,7 @@ object Versions {
     val constraint = "1.1.3"
     val coreTesting = "1.1.1"
     val coroutines = "1.0.1"
+    val coroutinesTest = "1.2.1"
     val koin = "1.0.1"
     val kotlin = "1.3.0"
     val mockk = "1.8.13.kotlin13"
@@ -36,7 +37,10 @@ object Libs {
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     val supportAppcompatV7 = "com.android.support:appcompat-v7:${Versions.supportLib}"
     val supportV4 = "com.android.support:support-v4:${Versions.supportLib}"
+
+
     //Test
+    val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTest}"
     val mockk = "io.mockk:mockk:${Versions.mockk}"
     val junit = "junit:junit:4.12"
     val mockkAndroid = "io.mockk:mockk-android:${Versions.mockk}"

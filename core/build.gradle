@@ -26,6 +26,10 @@ android {
         production {
         }
     }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
@@ -70,6 +74,7 @@ dependencies {
 
 
     testImplementation Libs.coreTesting
+    testImplementation Libs.coroutinesTest
     testImplementation Libs.junit
     testImplementation Libs.mockk
     androidTestImplementation Libs.fragmentTestRule

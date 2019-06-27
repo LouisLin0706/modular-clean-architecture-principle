@@ -9,11 +9,9 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.louis.core.arch.BaseFragment
 import com.louis.core.common.utils.dp2px
 import com.louis.core.data.LoadingState
-import com.louis.core.data.Resource
 import com.louis.core.presentation.base.OnItemClickListener
 import com.louis.core.routing.FeatureInfoRouter
 import com.louis.domain.model.Drama
@@ -69,17 +67,20 @@ class DramasStandardFragment : BaseFragment() {
                 outRect?.set(dp2px(4f), 0, dp2px(4f), dp2px(8f))
             }
         })
+//        dramasViewModel.dramas.observe(this, Observer {
+//            when (it!!.status) {
+//                Resource.Status.SUCCESS -> {
+//                    dramasAdapter.setData(it.data ?: emptyList())
+//                }
+//                Resource.Status.ERROR -> {
+//                    it.exception?.run {
+//                        Toast.makeText(activity, this.errorMessage, Toast.LENGTH_SHORT).show()
+//                    }
+//                }
+//            }
+//        })
         dramasViewModel.dramas.observe(this, Observer {
-            when (it!!.status) {
-                Resource.Status.SUCCESS -> {
-                    dramasAdapter.setData(it.data ?: emptyList())
-                }
-                Resource.Status.ERROR -> {
-                    it.exception?.run {
-                        Toast.makeText(activity, this.errorMessage, Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
+            dramasAdapter.setData(it ?: emptyList())
         })
         dramasViewModel.loadingState.observe(this, Observer {
             when (it!!.status) {

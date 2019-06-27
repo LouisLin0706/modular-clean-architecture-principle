@@ -11,5 +11,5 @@ val coreModel = module {
     factory { DramaApiClient() }
     factory { DramaRepo(get<DramaApiClient>()) }
     factory { DramaInteractor(get()) }
-    viewModel { DramasViewModel(get()) }
+    viewModel { DramasViewModel(get<DramaInteractor>()) }
 }
