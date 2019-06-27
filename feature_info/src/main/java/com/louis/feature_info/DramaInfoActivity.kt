@@ -6,7 +6,7 @@ import com.louis.core.arch.BaseActivity
 /**
  * Sample page
  */
-class ProductInfoActivity : BaseActivity() {
+class DramaInfoActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -28,28 +28,12 @@ First of all, I would like to show height level architecture of this app For ach
 </p>
 
 - ## Presentation layer 
-    Follow the app modularization 
-    I'm gonna separate whole app by page, so each page is a feature model and it contains Activity/Fragment and ViewModel which will only handle rendering views and will follow MVVM pattern
-    - ex. feature_home: represent home activity witch contains several different pages
-    - ex. feature_info: it just a sample show maybe will have drama detail page in the feature
-
 - ## Domain layer 
-    - With the Use Cases that will include all business logic and interact between Data and Presentation layer 
-
 - ## Data layer 
-    - Currently contains Network and response for server request
-    - Feature plan : Database , File , Sharedpreferences
-  
 - ## Core
-     Response for provide basic/reusable stuff/utils/common  
-     - base arch ex. BaseActivity/BaseFragment/BaseViewModel.
-        
 - ## Router
-     Because separate whole page to achieve single responsibility for each model, witch mean feature model don't know each other.So the router is response fo define page navigation.
-
+  
 - ## Features
-     - Unit test
-     - Define usecase 
      - Store arch 
 
 ### Used libraries: ###

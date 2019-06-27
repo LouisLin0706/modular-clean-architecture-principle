@@ -25,7 +25,7 @@
                 android:windowSoftInputMode="adjustNothing|adjustResize"
                 android:configChanges="screenSize|orientation|screenLayout"
                 android:launchMode="singleTop"
-                android:name="com.louis.feature_info.ProductInfoActivity"/>
+                android:name="com.louis.feature_info.DramaInfoActivity"/>
 
 
     </application>

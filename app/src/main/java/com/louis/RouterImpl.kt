@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import com.louis.core.routing.FeatureHomeRouter
 import com.louis.core.routing.FeatureInfoRouter
-import com.louis.feature_info.ProductInfoActivity
+import com.louis.feature_info.DramaInfoActivity
 
 class FeatureHomeImpl : FeatureHomeRouter {
     override fun showFeatureHome(context: Context) {
@@ -14,7 +14,7 @@ class FeatureHomeImpl : FeatureHomeRouter {
 
 class FeatureInfoImpl : FeatureInfoRouter {
     override fun showProductInfo(context: Context) {
-        context.startActivity(Intent(context, ProductInfoActivity::class.java))
+        context.startActivity(Intent(context, DramaInfoActivity::class.java))
     }
 
 }
