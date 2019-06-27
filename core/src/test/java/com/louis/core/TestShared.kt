@@ -1,5 +1,6 @@
 package com.louis.core
 
+import com.louis.core.data.model.CoroutinesDispatcherProvider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.asCoroutineDispatcher
 import kotlinx.coroutines.test.resetMain
@@ -23,3 +24,6 @@ class CoroutinesMainDispatcherRule : TestWatcher() {
         Dispatchers.resetMain()
     }
 }
+
+fun provideFakeCoroutinesDispatcherProvider(): CoroutinesDispatcherProvider =
+    CoroutinesDispatcherProvider(Dispatchers.Main, Dispatchers.Main, Dispatchers.Main)
