@@ -1,11 +1,11 @@
 package com.louis.domain.interactor.drama
 
-import com.louis.data.repository.DramaRepo
+import com.louis.data.repository.DramaRepoProtocol
 import com.louis.domain.model.Drama
 
-class DramaInteractor(private val dramaRepo: DramaRepo) :DramaInteractorPrtocol {
+class DramaInteractor(private val dramaRepoProtocol: DramaRepoProtocol) : DramaInteractorPrtocol {
     override suspend fun getDramas(): List<Drama> {
-        return dramaRepo.fetchDramaDraftRawList()
+        return dramaRepoProtocol.fetchDramaDraftRawList()
             .map {
                 Drama(
                     dramaId = it.dramaId,
