@@ -1,7 +1,7 @@
 package com.louis.core.presentation.dramas
 
 import android.annotation.SuppressLint
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import com.louis.core.arch.BaseViewModel
 import com.louis.core.data.LoadingState
 import com.louis.core.data.model.CoroutinesDispatcherProvider

@@ -1,11 +1,16 @@
 package com.louis.domain.interactor.drama
 
+import com.louis.data.cache.Func1
 import com.louis.data.repository.DramaRepoProtocol
 import com.louis.domain.model.Drama
 
 class DramaInteractor(private val dramaRepoProtocol: DramaRepoProtocol) : DramaInteractorPrtocol {
+    override suspend fun getDrama(func1: Func1<String, Drama>): Drama {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
     override suspend fun getDramas(): List<Drama> {
-        return dramaRepoProtocol.fetchDramaDraftRawList()
+        return dramaRepoProtocol.fetchDrama()
             .map {
                 Drama(
                     dramaId = it.dramaId,

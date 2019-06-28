@@ -1,7 +1,7 @@
 package com.louis.feature_home
 
 import android.os.Bundle
-import android.support.v4.view.ViewPager
+import androidx.viewpager.widget.ViewPager
 import com.louis.core.arch.BaseActivity
 import com.louis.core.presentation.base.TabFragmentAdapter
 import com.louis.core.presentation.dramas.DramasStandardFragment

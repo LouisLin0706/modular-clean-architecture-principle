@@ -18,7 +18,7 @@ class DramaInteractorTest {
     @Test
     fun testDramasTransform() = runBlocking {
         coEvery {
-            mockDramasRepo.fetchDramaDraftRawList()
+            mockDramasRepo.fetchDrama()
         } returns listOf(
             DramaDraftRaw(
                 dramaName = "測試",
@@ -31,7 +31,7 @@ class DramaInteractorTest {
         )
 
         val data = dramasInteractor.getDramas()
-        coVerify(exactly = 1) { mockDramasRepo.fetchDramaDraftRawList() }
+        coVerify(exactly = 1) { mockDramasRepo.fetchDrama() }
         assert(data.size == 1) {
             "Validate data size error"
         }

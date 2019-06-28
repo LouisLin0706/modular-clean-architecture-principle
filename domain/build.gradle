@@ -25,15 +25,15 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     // Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-
+    implementation Libs.kotlin
     //coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    implementation Libs.coroutines
+    implementation Libs.corroutinesAndroid
 
     //RxJava & RxAndroid
-    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid"
-    implementation "io.reactivex.rxjava2:rxjava:$rxJava"
+    implementation Libs.rxAndroid
+    implementation Libs.rxJava2
+
 
     //Test
     testImplementation Libs.coreTesting

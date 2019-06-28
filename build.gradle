@@ -4,11 +4,15 @@ buildscript {
     ext.kotlin_version = '1.3.10'
     repositories {
         google()
+        maven {
+            url "https://maven.google.com"
+        }
         jcenter()
+        maven { url "https://jitpack.io" }
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle:3.3.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -18,9 +22,20 @@ buildscript {
 allprojects {
     repositories {
         google()
+        maven {
+            url "https://maven.google.com"
+        }
         jcenter()
         maven { url "https://jitpack.io" }
-        
+
+    }
+
+    configurations {
+        all {
+            resolutionStrategy {
+                force Libs.liveData
+            }
+        }
     }
 }
 
@@ -31,9 +46,9 @@ ext {
     minSdkVersion = 21
     targetSdkVersion = 27
     minSdkInstant = 21
-    supportLibraryVersion = '27.1.1'
+    supportLibraryVersion = '1.0.0-beta01'
     constraintLayoutVersion = '1.1.3'
-    multidexVerion = '1.0.3'
+    multidexVerion = '2.0.0'
     roomVersion = '1.1.1'
     archVersion = '1.1.0'
     gsonVersion = "2.8.5"

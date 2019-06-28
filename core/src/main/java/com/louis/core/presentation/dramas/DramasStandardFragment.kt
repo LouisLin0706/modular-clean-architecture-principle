@@ -1,14 +1,14 @@
 package com.louis.core.presentation.dramas
 
-import android.arch.lifecycle.Observer
 import android.content.res.Configuration
 import android.graphics.Rect
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.louis.core.arch.BaseFragment
 import com.louis.core.common.utils.dp2px
 import com.louis.core.data.LoadingState
@@ -17,7 +17,7 @@ import com.louis.core.routing.FeatureInfoRouter
 import com.louis.domain.model.Drama
 import kotlinx.android.synthetic.main.fragment_product.*
 import org.koin.android.ext.android.inject
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 /**
@@ -57,14 +57,9 @@ class DramasStandardFragment : BaseFragment() {
         val dramasAdapter = DramasAdapter()
         recyclerview_dramas.adapter = dramasAdapter
         recyclerview_dramas.addItemDecoration(object : RecyclerView.ItemDecoration() {
-            override fun getItemOffsets(
-                outRect: Rect?,
-                view: View?,
-                parent: RecyclerView?,
-                state: RecyclerView.State?
-            ) {
+            override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
                 super.getItemOffsets(outRect, view, parent, state)
-                outRect?.set(dp2px(4f), 0, dp2px(4f), dp2px(8f))
+                outRect.set(dp2px(4f), 0, dp2px(4f), dp2px(8f))
             }
         })
 //        dramasViewModel.dramas.observe(this, Observer {

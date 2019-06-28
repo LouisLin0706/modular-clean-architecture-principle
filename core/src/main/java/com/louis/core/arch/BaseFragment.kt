@@ -1,6 +1,6 @@
 package com.louis.core.arch
 
-import android.support.v4.app.DialogFragment
+import androidx.fragment.app.DialogFragment
 
 open class BaseFragment : DialogFragment() {
 }

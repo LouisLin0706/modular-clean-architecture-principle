@@ -1,6 +1,6 @@
 package com.louis.core.presentation.base
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 
 abstract class ClickableAdapter<T, VH : RecyclerView.ViewHolder> : RecyclerView.Adapter<VH>() {

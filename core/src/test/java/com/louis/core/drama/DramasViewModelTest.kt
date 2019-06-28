@@ -38,7 +38,6 @@ class DramasViewModelTest  : BaseViewModelTest() {
                 totalViews = 4
             )
         )
-        System.out.println("test13" + Thread.currentThread().name)
         viewModel.fetchDramas()
         coVerify(exactly = 1) { dramasInteractor.getDramas() }
         val data = viewModel.dramas.value!!

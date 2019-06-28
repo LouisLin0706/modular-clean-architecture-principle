@@ -1,6 +1,6 @@
 package com.louis.core.base
 
-import android.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.louis.core.CoroutinesMainDispatcherRule
 import com.louis.core.provideFakeCoroutinesDispatcherProvider
 import org.junit.Rule
