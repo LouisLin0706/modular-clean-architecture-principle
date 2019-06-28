@@ -27,9 +27,9 @@ dependencies {
     implementation project(':domain')
 
     //Test
-    testImplementation Libs.coreTesting
+    testImplementation Libs.archCoreTesting
     testImplementation Libs.coroutinesTest
-    testImplementation Libs.junit
+    testImplementation Libs.testJunit
     testImplementation Libs.mockk
     androidTestImplementation Libs.fragmentTestRule
     androidTestImplementation Libs.mockk

@@ -20,8 +20,11 @@ object Versions {
     val paging = "1.0.0"
     val retrofit = "2.5.0"
     val supportLib = "28.0.0"
-    val testEspresso = "3.0.2"
-    val testRunner = "1.0.2"
+    val testEspresso = "3.1.0"
+    val testRunner = "1.1.0"
+    val testRule = "1.1.0"
+    val testJunit = "1.0.0"
+    val testJunitCore = "4.12"
     val fragmentTestRule = "2.0.1"
     val material = "1.0.0"
     val glide = "4.8.0"
@@ -29,6 +32,8 @@ object Versions {
     val rxAndroid = "2.1.1"
     val rxJava = "2.2.0"
     val okhttpVersion = "3.12.0"
+    val gson ="2.8.5"
+    val testCore ="1.0.0"
 }
 
 object Libs {
@@ -49,12 +54,13 @@ object Libs {
     val coreRunTime = "androidx.arch.core:core-runtime:${Versions.aacCore}"
 
     val core = "androidx.arch.core:core:${Versions.aacCore}"
-    val coreTesting = "androidx.arch.core:core-testing:${Versions.aacCore}"
+    //gson
+    val gson = "com.google.code.gson:gson:${Versions.gson}"
 
     //Network
     val okHttpInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttpVersion}"
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
-    val retrofitGson = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    val retrofitGson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
 
     //RxJava
 
@@ -89,12 +95,26 @@ object Libs {
 
     //Test
     val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTest}"
+
+    val archCoreTesting = "androidx.arch.core:core-testing:${Versions.aacCore}"
+
+    //mock
     val mockk = "io.mockk:mockk:${Versions.mockk}"
-    val junit = "junit:junit:4.12"
     val mockkAndroid = "io.mockk:mockk-android:${Versions.mockk}"
-    val testRunner = "com.android.support.test:runner:${Versions.testRunner}"
-    val testEspresso = "com.android.support.test.espresso:espresso-core:${Versions.testEspresso}"
-    val testRules = "com.android.support.test:rules:${Versions.testRunner}"
+
+
+    // AndroidJUnitRunner and JUnit Rules
+    val testRunner = "androidx.test:runner:${Versions.testRunner}"
+    val testRules = "androidx.test:rules:${Versions.testRule}"
+
+    // Assertions
+    val testJunit = "androidx.test.ext:junit:${Versions.testJunit}"
+    val junit = "junit:junit:${Versions.testJunitCore}"
+    //Espresso dependencies
+    val testEspresso = "androidx.test.espresso:espresso-core:${Versions.testEspresso}"
+
+    // // Core library
+    val testCore = "androidx.test:core:${Versions.testCore}"
     val fragmentTestRule = "com.21buttons:fragment-test-rule:${Versions.fragmentTestRule}"
     val fragmentTestRuleExtras = "com.21buttons:fragment-test-rule-extras:${Versions.fragmentTestRule}"
 }

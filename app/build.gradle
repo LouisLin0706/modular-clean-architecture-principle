@@ -70,4 +70,18 @@ dependencies {
     implementation project(':core')
     implementation project(':feature_home')
     implementation project(':feature_info')
+
+
+    //Test
+    testImplementation Libs.archCoreTesting
+    testImplementation Libs.coroutinesTest
+    testImplementation Libs.testJunit
+    testImplementation Libs.mockk
+    androidTestImplementation Libs.fragmentTestRule
+    androidTestImplementation Libs.mockk
+    androidTestImplementation Libs.mockkAndroid
+    androidTestImplementation Libs.testEspresso
+    androidTestImplementation Libs.testRunner
+    androidTestImplementation Libs.testRules
+    debugImplementation Libs.fragmentTestRuleExtras
 }

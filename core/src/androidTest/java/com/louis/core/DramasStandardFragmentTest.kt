@@ -4,7 +4,7 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withText
-import androidx.test.runner.AndroidJUnit4
+import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import com.android21buttons.fragmenttestrule.FragmentTestRule
 import com.louis.core.presentation.dramas.DramasStandardFragment
 import com.louis.core.presentation.dramas.DramasViewModel
@@ -22,7 +22,7 @@ import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import java.util.*
 
-@RunWith(AndroidJUnit4::class)
+@RunWith(AndroidJUnit4ClassRunner::class)
 class DramasStandardFragmentTest {
 
     @get:Rule

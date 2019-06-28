@@ -61,7 +61,7 @@ dependencies {
         exclude group: 'com.squareup.okhttp3'
         exclude group: 'com.github.bumptech.glide'
     }
-    
+
     //coroutines
     api Libs.coroutines
     api Libs.corroutinesAndroid
@@ -71,14 +71,18 @@ dependencies {
     implementation Libs.liveData
 
     //Test
-    testImplementation Libs.coreTesting
+    testImplementation Libs.archCoreTesting
     testImplementation Libs.coroutinesTest
+    testImplementation Libs.testJunit
     testImplementation Libs.junit
     testImplementation Libs.mockk
     androidTestImplementation Libs.fragmentTestRule
     androidTestImplementation Libs.mockk
     androidTestImplementation Libs.mockkAndroid
-    androidTestImplementation Libs.testEspresso
+    androidTestImplementation(Libs.testEspresso) {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+
     androidTestImplementation Libs.testRunner
     androidTestImplementation Libs.testRules
     debugImplementation Libs.fragmentTestRuleExtras

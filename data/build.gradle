@@ -9,7 +9,7 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
 
@@ -44,6 +44,7 @@ dependencies {
     api Libs.retrofit
     api Libs.retrofitGson
 
+
     //coroutines
     implementation Libs.coroutines
     implementation Libs.corroutinesAndroid
@@ -52,13 +53,28 @@ dependencies {
     implementation Libs.rxAndroid
     implementation Libs.rxJava2
 
-    //Test
-    testImplementation Libs.coreTesting
-    testImplementation Libs.coroutinesTest
-    testImplementation Libs.junit
-    testImplementation Libs.mockk
-
     implementation Libs.roomRuntime
     implementation Libs.roomKtx
     kapt Libs.roomCompiler
+
+
+    //Test
+    testImplementation Libs.testCore
+    testImplementation Libs.coroutinesTest
+    testImplementation Libs.testJunit
+    testImplementation Libs.junit
+    testImplementation Libs.mockk
+
+
+    androidTestImplementation Libs.testJunit
+    androidTestImplementation Libs.archCoreTesting
+    androidTestImplementation Libs.testCore
+    androidTestImplementation Libs.fragmentTestRule
+    androidTestImplementation Libs.mockk
+    androidTestImplementation Libs.mockkAndroid
+    androidTestImplementation Libs.testEspresso
+    androidTestImplementation Libs.testRunner
+    androidTestImplementation Libs.testRules
+    debugImplementation Libs.fragmentTestRuleExtras
+
 }
