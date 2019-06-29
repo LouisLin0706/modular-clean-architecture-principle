@@ -9,11 +9,11 @@
 This project is flow [Build a Modular Android App Architecture(Google I/O'19)](https://www.youtube.com/watch?v=PZBg5DIzNww), the following points are the project goal of features  
 - Modularization: ensure each page has own responsibility and can be split apk 
 - Clean Architecture: 
-    - Presentation layer: response for rendering ui and will follow MVVM pattern
-    - Domain layer: response for different use case business logic 
+    - Presentation layer: responsible for rendering ui and will follow MVVM pattern
+    - Domain layer: responsible for  different use case business logic 
     - Data layer:
-        - Network: response for network connection to get raw data from server 
-        - Database: response for data store if necessary
+        - Network: responsible for network connection to get raw data from server 
+        - Database: responsible for data store if necessary
         - Store 
             - Cache 
            
