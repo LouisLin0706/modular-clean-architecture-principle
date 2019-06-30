@@ -7,7 +7,7 @@ import com.louis.data.database.convert.DateConverter
 import com.louis.data.database.dao.CacheDramaDao
 import com.louis.data.database.drama.model.CacheDrama
 
-@Database(entities = [CacheDrama::class], version = 1)
+@Database(entities = [CacheDrama::class], version = 1, exportSchema = false)
 @TypeConverters(DateConverter::class)
 abstract class DramaDatabase : RoomDatabase() {
 

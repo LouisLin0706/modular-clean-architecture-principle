@@ -1,11 +1,12 @@
 package com.louis.data.repository
 
-import com.louis.data.cache.Func1
 import com.louis.data.database.drama.model.CacheDrama
-import com.louis.data.network.drama.model.DramaDraftRaw
+import com.louis.data.database.drama.model.Query
+import com.louis.data.database.drama.model.Sort
 
 interface DramaRepoProtocol {
-    suspend fun fetchDrama(): List<DramaDraftRaw>
-    suspend fun getDramas(): List<DramaDraftRaw>
-    suspend fun getDrama(func1: Func1<CacheDrama,Int>): DramaDraftRaw
+    suspend fun fetchDrama(): List<CacheDrama>
+    suspend fun getCacheDramas(): List<CacheDrama>
+    suspend fun getCacheDrama(dramaId: Int): CacheDrama?
+    suspend fun getCacheDramas(sort: List<Sort>, query: List<Query>): List<CacheDrama>
 }

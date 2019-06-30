@@ -1,28 +1,41 @@
 package com.louis.data.repository
 
-import com.louis.data.cache.Func1
 import com.louis.data.cache.Store
 import com.louis.data.database.drama.model.CacheDrama
+import com.louis.data.database.drama.model.Query
+import com.louis.data.database.drama.model.Sort
 import com.louis.data.extension.retrofit.await
 import com.louis.data.network.drama.DramaApiClientSpec
-import com.louis.data.network.drama.model.DramaDraftRaw
 
 open class DramaRepo(
     private val dramaApiClient: DramaApiClientSpec,
-    private val store: Store<Int, CacheDrama>
+    private val store: Store.DBStore<Int, CacheDrama, Sort, Query>
 ) : DramaRepoProtocol {
-
-    override suspend fun getDrama(func1: Func1<CacheDrama, Int>): DramaDraftRaw {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override suspend fun getCacheDrama(dramaId: Int): CacheDrama? {
+        return store.getSingular(dramaId)
     }
 
-    override suspend fun fetchDrama(): List<DramaDraftRaw> {
+    override suspend fun getCacheDramas(sort: List<Sort>, query: List<Query>): List<CacheDrama> {
+        return store.getAll(sort, query)
+    }
+
+    override suspend fun fetchDrama(): List<CacheDrama> {
         val data = dramaApiClient.fetchDramas().await()
-        //TODO SAVE IN CACHE
-        return data
+        val transformToCaches = data.map {
+            CacheDrama(
+                dramaId = it.dramaId,
+                dramaName = it.dramaName,
+                totalViews = it.totalViews,
+                createdAt = it.createdAt.time,
+                thumbUrl = it.thumbUrl,
+                rating = it.rating
+            )
+        }.toList()
+        store.putAll(transformToCaches)
+        return getCacheDramas()
     }
 
-    override suspend fun getDramas(): List<DramaDraftRaw> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override suspend fun getCacheDramas(): List<CacheDrama> {
+        return getCacheDramas(query = emptyList(), sort = listOf(Sort(CacheDrama.RATING_COUNT)))
     }
 }
