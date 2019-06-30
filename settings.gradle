@@ -1,1 +1,1 @@
-include ':app', ':core', ':feature_home', ':data', ':domain', ':feature_info'
+include ':app', ':core', ':feature_home', ':data', ':domain', ':feature_info', ':feature_search'
