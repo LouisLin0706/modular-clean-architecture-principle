@@ -3,11 +3,12 @@ package com.louis.core.presentation.dramas
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.louis.core.presentation.base.ClickableAdapter
-import com.louis.domain.model.Drama
+import com.louis.data.database.drama.model.CacheDrama
+
 /**
  * TODO feature paging
  */
-class DramasAdapter : ClickableAdapter<Drama, DramaViewHolder>() {
+class DramasAdapter : ClickableAdapter<CacheDrama, DramaViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DramaViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(DramaViewHolder.LAYOUT_ID, parent, false)
         return DramaViewHolder(view)

@@ -1,6 +1,6 @@
 package com.louis.domain
 
-import com.louis.data.network.drama.model.DramaDraftRaw
+import com.louis.data.database.drama.model.CacheDrama
 import com.louis.data.repository.DramaRepoProtocol
 import com.louis.domain.interactor.drama.DramaInteractor
 import io.mockk.coEvery
@@ -20,22 +20,22 @@ class DramaInteractorTest {
         coEvery {
             mockDramasRepo.fetchDrama()
         } returns listOf(
-            DramaDraftRaw(
+            CacheDrama(
                 dramaName = "測試",
                 dramaId = 1,
-                createdAt = Date(),
+                createdAt = Date().time,
                 totalViews = 1,
                 rating = 5.5,
                 thumbUrl = "test"
             )
         )
 
-        val data = dramasInteractor.getDramas()
+        val data = dramasInteractor.fetchCacheDramas()
         coVerify(exactly = 1) { mockDramasRepo.fetchDrama() }
         assert(data.size == 1) {
             "Validate data size error"
         }
-        assert(data.first().dramaName=="測試") {
+        assert(data.first().dramaName == "測試") {
             "Validate data dramaName error"
         }
     }

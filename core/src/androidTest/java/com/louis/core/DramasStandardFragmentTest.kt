@@ -9,7 +9,6 @@ import com.android21buttons.fragmenttestrule.FragmentTestRule
 import com.louis.core.presentation.dramas.DramasStandardFragment
 import com.louis.core.presentation.dramas.DramasViewModel
 import com.louis.domain.interactor.drama.DramaInteractorPrtocol
-import com.louis.domain.model.Drama
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
@@ -59,7 +58,7 @@ class DramasStandardFragmentTest {
         val dramasUseCase = mockk<DramaInteractorPrtocol>()
         every {
             runBlocking {
-                dramasUseCase.getDramas()
+                dramasUseCase.fetchCacheDramas()
             }
         } returns listOf(
             Drama(

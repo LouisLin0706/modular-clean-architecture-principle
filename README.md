@@ -24,7 +24,7 @@ This project is flow [Build a Modular Android App Architecture(Google I/O'19)](h
 First of all, I would like to show height level architecture of this app For achieving The separation of concerns 
 
 <p align="center">
-<img src="height_level_architecture.png" alt="" width="400"/>
+<img src="height_level_architecture.png" alt="" width="600"/>
 </p>
 
 - ## Presentation layer 

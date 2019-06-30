@@ -3,7 +3,6 @@ package com.louis.core.drama
 import com.louis.core.base.BaseViewModelTest
 import com.louis.core.presentation.dramas.DramasViewModel
 import com.louis.domain.interactor.drama.DramaInteractorPrtocol
-import com.louis.domain.model.Drama
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
@@ -27,7 +26,7 @@ class DramasViewModelTest  : BaseViewModelTest() {
     @Test
     fun loadInitialPage() {
         coEvery {
-            dramasInteractor.getDramas()
+            dramasInteractor.fetchCacheDramas()
         } returns listOf(
             Drama(
                 dramaId = 0,
@@ -39,7 +38,7 @@ class DramasViewModelTest  : BaseViewModelTest() {
             )
         )
         viewModel.fetchDramas()
-        coVerify(exactly = 1) { dramasInteractor.getDramas() }
+        coVerify(exactly = 1) { dramasInteractor.fetchCacheDramas() }
         val data = viewModel.dramas.value!!
         Assert.assertEquals(1, data.size)
     }

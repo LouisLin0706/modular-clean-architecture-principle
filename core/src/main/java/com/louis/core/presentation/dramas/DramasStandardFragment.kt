@@ -14,7 +14,7 @@ import com.louis.core.common.utils.dp2px
 import com.louis.core.data.LoadingState
 import com.louis.core.presentation.base.OnItemClickListener
 import com.louis.core.routing.FeatureInfoRouter
-import com.louis.domain.model.Drama
+import com.louis.data.database.drama.model.CacheDrama
 import kotlinx.android.synthetic.main.fragment_product.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -62,18 +62,7 @@ class DramasStandardFragment : BaseFragment() {
                 outRect.set(dp2px(4f), 0, dp2px(4f), dp2px(8f))
             }
         })
-//        dramasViewModel.dramas.observe(this, Observer {
-//            when (it!!.status) {
-//                Resource.Status.SUCCESS -> {
-//                    dramasAdapter.setData(it.data ?: emptyList())
-//                }
-//                Resource.Status.ERROR -> {
-//                    it.exception?.run {
-//                        Toast.makeText(activity, this.errorMessage, Toast.LENGTH_SHORT).show()
-//                    }
-//                }
-//            }
-//        })
+
         dramasViewModel.dramas.observe(this, Observer {
             dramasAdapter.setData(it ?: emptyList())
         })
@@ -87,8 +76,8 @@ class DramasStandardFragment : BaseFragment() {
             dramasViewModel.fetchDramas()
         }
         dramasViewModel.fetchDramas()
-        dramasAdapter.onItemClick = object : OnItemClickListener<Drama> {
-            override fun onItemClick(position: Int, data: Drama, view: View) {
+        dramasAdapter.onItemClick = object : OnItemClickListener<CacheDrama> {
+            override fun onItemClick(position: Int, data: CacheDrama, view: View) {
                 featureInfoRouter.showProductInfo(activity!!)
             }
         }

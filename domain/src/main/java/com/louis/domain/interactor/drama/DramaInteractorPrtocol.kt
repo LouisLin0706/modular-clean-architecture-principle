@@ -1,9 +1,12 @@
 package com.louis.domain.interactor.drama
 
-import com.louis.data.cache.Func1
-import com.louis.domain.model.Drama
+import com.louis.data.database.drama.model.CacheDrama
 
 interface DramaInteractorPrtocol {
-    suspend fun getDramas(): List<Drama>
-    suspend fun getDrama(func1: Func1<String, Drama>): Drama
+
+    suspend fun fetchCacheDramas(): List<CacheDrama>
+
+    suspend fun getCacheDrama(key: Int): CacheDrama?
+
+    suspend fun getCacheDrama(keyWords: String): List<CacheDrama>
 }

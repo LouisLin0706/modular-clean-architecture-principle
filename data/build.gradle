@@ -53,8 +53,8 @@ dependencies {
     implementation Libs.rxAndroid
     implementation Libs.rxJava2
 
-    implementation Libs.roomRuntime
-    implementation Libs.roomKtx
+    api Libs.roomRuntime
+    api Libs.roomKtx
     kapt Libs.roomCompiler
 
 
